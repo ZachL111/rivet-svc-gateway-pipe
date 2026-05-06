@@ -1,0 +1,17 @@
+{
+  "repo": "rivet-svc-gateway-pipe",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 4,
+    "ship": 185,
+    "watch": 101
+  },
+  "terms": [
+    "queue pressure",
+    "retry load",
+    "worker slack",
+    "session drift"
+  ]
+}
