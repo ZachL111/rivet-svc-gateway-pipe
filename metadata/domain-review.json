@@ -1,0 +1,73 @@
+{
+  "repo": "rivet-svc-gateway-pipe",
+  "language": "Kotlin",
+  "category": "Backend services",
+  "goal": "Design a Kotlin verification harness for gateway systems, covering visual model generation, layout fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "queue pressure",
+      "retry load",
+      "worker slack",
+      "session drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "queue pressure",
+      "signal": 42,
+      "slack": 39,
+      "drag": 11,
+      "confidence": 75,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry load",
+      "signal": 53,
+      "slack": 45,
+      "drag": 19,
+      "confidence": 77,
+      "score": 171,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "worker slack",
+      "signal": 78,
+      "slack": 47,
+      "drag": 28,
+      "confidence": 90,
+      "score": 209,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "session drift",
+      "signal": 63,
+      "slack": 50,
+      "drag": 28,
+      "confidence": 56,
+      "score": 148,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "queue pressure",
+      "signal": 89,
+      "slack": 24,
+      "drag": 25,
+      "confidence": 85,
+      "score": 212,
+      "lane": "ship"
+    }
+  ]
+}
